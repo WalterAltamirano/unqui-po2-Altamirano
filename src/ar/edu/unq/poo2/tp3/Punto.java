@@ -32,4 +32,8 @@ public class Punto {
 		this.edad = edad;
 	}
 	
+	public float getEdad() {
+		return edad;
+	}
+	
 }
