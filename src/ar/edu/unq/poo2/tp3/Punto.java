@@ -4,7 +4,6 @@ public class Punto {
 	private float x;
 	private float y;
 	
-	private float edad;
 	public Punto(float x, float y) {
 		super();
 		this.setXY(x, y);
@@ -27,13 +26,4 @@ public class Punto {
 	public void setY(float y) {
 		this.y = y;
 	}
-	
-	public void setEdad(float edad) {
-		this.edad = edad;
-	}
-	
-	public float getEdad() {
-		return edad;
-	}
-	
 }
