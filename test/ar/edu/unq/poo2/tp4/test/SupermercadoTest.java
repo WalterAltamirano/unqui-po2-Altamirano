@@ -29,9 +29,9 @@ public class SupermercadoTest {
 	
 	@Test
 	public void testPrecioTotal() {
-		assertEquals(0d, supermercado.getPrecioTotal());
+		assertEquals(0d, supermercado.getSumaTotalDePrecios());
 		supermercado.agregarProducto(arroz);
 		supermercado.agregarProducto(detergente);
-		assertEquals(93.9d, supermercado.getPrecioTotal());
+		assertEquals(93.9d, supermercado.getSumaTotalDePrecios());
 	}
 }

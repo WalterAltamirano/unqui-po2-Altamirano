@@ -34,12 +34,13 @@ public class Trabajador {
 		return montoImponible;
 	}
 		
-	
 	public float getImpuestoAPagar() {
-		return this.getMontoImponible() - this.impuestoDelMontoImponible();
-	}
-	
-	private int impuestoDelMontoImponible() {
 		return (this.getMontoImponible() * impuestoAlTrabajador) / 100;
 	}
+	
+	public void registrarIngreso(Ingreso ingreso) {
+		registroDeIngresos.add(ingreso);
+	}
+	
+	
 }

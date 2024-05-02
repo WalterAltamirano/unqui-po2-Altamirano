@@ -1,6 +1,9 @@
 package ar.edu.unq.poo2.tp4;
 
-public class Producto {
+import ar.edu.unq.poo2.tp5.interfaces.Registrable;
+import ar.edu.unq.poo2.tp5.Caja;
+
+public class Producto implements Registrable{
 	
 	//Atributos
 	
@@ -10,6 +13,7 @@ public class Producto {
 	
 	protected boolean incluidoEnPreciosCuidados = false;
 	
+	protected Caja cajaRegistradora;
 	
 	//Constructores
 	public Producto(String nombre,double precio,boolean estaEnPreciosCuidados) {
@@ -24,12 +28,24 @@ public class Producto {
 		this.nombre = nombre;
 		this.precio = precio;
 	}
+
+	public Producto(String nombre,double precio,Caja cajaRegistradora) {
+		super();
+		this.cajaRegistradora = cajaRegistradora;
+		this.nombre = nombre;
+		this.precio = precio;
+	}
 	
 	//Metodos
+	
+	public void registrarse() {
+		cajaRegistradora.decrementarStockDe(this);
+	}
 	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public double getPrecio() {
 		return precio;
 	}
@@ -44,9 +60,6 @@ public class Producto {
 	public boolean esPrecioCuidado() {
 		return incluidoEnPreciosCuidados;
 	}
-	public boolean isIncluidoEnPreciosCuidados() {
-		return incluidoEnPreciosCuidados;
-	}
 	public void setIncluidoEnPreciosCuidados(boolean incluidoEnPreciosCuidados) {
 		this.incluidoEnPreciosCuidados = incluidoEnPreciosCuidados;
 	}
@@ -54,6 +67,4 @@ public class Producto {
 	public void aumentarPrecio(double precioAAumentar) {
 		this.precio = precio + precioAAumentar;
 	}
-	
-	
 }

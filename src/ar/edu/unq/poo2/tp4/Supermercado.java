@@ -36,7 +36,7 @@ public class Supermercado {
 		return productos;
 	}
 	
-	public double getPrecioTotal() {
+	public double getSumaTotalDePrecios() {
 		
 		double sumatoriaDePrecios = this.getProductos().stream()
 								 .mapToDouble(producto -> producto.getPrecio())

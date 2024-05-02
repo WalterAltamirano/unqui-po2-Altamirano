@@ -18,9 +18,8 @@ public class ProductoPrimeraNecesidad extends Producto {
 		this.descuento = descuento;
 	}
 	
-	@Override
 	public double getPrecio() {
-		return precio - this.descuentoDePrecio();
+		return this.precio - this.descuentoDePrecio();   //En los ejemplos esta hecho asi (Habia puesto override)
 	}
 	
 	private double descuentoDePrecio() {
