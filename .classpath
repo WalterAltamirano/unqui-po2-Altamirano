@@ -2,7 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/walle/Desktop/UNQUI/Materias/Programacion Con Objetos ll/Semana 6/mockito/byte-buddy-1.12.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/walle/Desktop/UNQUI/Materias/Programacion Con Objetos ll/Semana 6/mockito/byte-buddy-agent-1.12.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/walle/Desktop/UNQUI/Materias/Programacion Con Objetos ll/Semana 6/mockito/generics-resolver-3.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/walle/Desktop/UNQUI/Materias/Programacion Con Objetos ll/Semana 6/mockito/mockito-core-4.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/walle/Desktop/UNQUI/Materias/Programacion Con Objetos ll/Semana 6/mockito/objenesis-3.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
