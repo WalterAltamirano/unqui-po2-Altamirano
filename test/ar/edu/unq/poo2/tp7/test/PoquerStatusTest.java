@@ -97,11 +97,11 @@ public class PoquerStatusTest {
 		assertEquals("Nada",pokerStatus.verificar(tresDeDiamantes, cincoDeDiamantes, diezDePica, cuatroDeCorazones, unoDeCorazones));
 		
 		//Verify
-		verify(tresDeDiamantes, times(2)).valor();
-		verify(cincoDeDiamantes,times(2)).valor();
-		verify(diezDePica,times(2)).valor();
-		verify(cuatroDeCorazones,times(2)).valor();
-		verify(unoDeCorazones,times(2)).valor();
+		verify(tresDeDiamantes, times(1)).valor();
+		verify(cincoDeDiamantes,times(1)).valor();
+		verify(diezDePica,times(1)).valor();
+		verify(cuatroDeCorazones,times(1)).valor();
+		verify(unoDeCorazones,times(1)).valor();
 		
 		verify(tresDeDiamantes, times(1)).palo();
 		verify(cincoDeDiamantes,times(1)).palo();
@@ -153,9 +153,32 @@ public class PoquerStatusTest {
 		
 		assertEquals("Trio", pokerStatus.verificar(dosDeDiamantes, dosDePica, dosDeCorazones, unoDeCorazones, tresDeDiamantes));
 		//Verify
-		verify(dosDeDiamantes,times(2)).valor();
-		verify(dosDePica,times(2)).valor();
-		verify(dosDeCorazones,times(2)).valor();
+		verify(dosDeDiamantes,times(1)).valor();
+		verify(dosDePica,times(1)).valor();
+		verify(dosDeCorazones,times(1)).valor();
+	}
+	@Test
+	public void testUnPoquerStatusRecibe5CartasYVerificaQueLaJugadaEsTrio() {
+		Carta reinaDeCorazones = mock(Carta.class);
+		Carta reinaDePica = mock(Carta.class);
+		
+		when(dosDeDiamantes.valor()).thenReturn(2);
+		when(dosDePica.valor()).thenReturn(2);
+		when(dosDeCorazones.valor()).thenReturn(2);
+		when(reinaDeCorazones.valor()).thenReturn(11);
+		when(reinaDePica.valor()).thenReturn(11);
+		
+		when(dosDeDiamantes.palo()).thenReturn(PalosPoquer.DIAMANTE);
+		when(dosDePica.palo()).thenReturn(PalosPoquer.PICA);
+		when(dosDeCorazones.palo()).thenReturn(PalosPoquer.CORAZONES);
+		
+		//Excercise
+		
+		assertEquals("Trio", pokerStatus.verificar(dosDeDiamantes, dosDePica, dosDeCorazones, unoDeCorazones, tresDeDiamantes));
+		//Verify
+		verify(dosDeDiamantes,times(1)).valor();
+		verify(dosDePica,times(1)).valor();
+		verify(dosDeCorazones,times(1)).valor();
 	}
 	
 	@Test
@@ -179,7 +202,6 @@ public class PoquerStatusTest {
 		
 		//Excercise
 		assertEquals("Color", pokerStatus.verificar(dosDeDiamantes, sieteDeDiamantes, cuatroDeDiamantes, tresDeDiamantes, reinaDeDiamantes));
-		
 		//Verify
 		verify(dosDeDiamantes,times(1)).palo();
 		verify(sieteDeDiamantes,times(1)).palo();

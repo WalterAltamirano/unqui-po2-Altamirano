@@ -7,20 +7,20 @@ public class Cliente {
 	private String apellido;
 	private int edad;
 	private String direccion;
-	private float sueldoNetoMensual;
+	private double sueldoNetoMensual;
 	private PropiedadInmobiliaria propiedadInmobiliaria;
 	//Constructor
-	public Cliente(String nombre,String apellido, int edad,String direccion,Float sueldoNetoMensual) {
+	public Cliente(String nombre,String apellido, int edad,String direccion,double sueldoNetoMensual) {
 		super();
-		this.nombre   = nombre;
+		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
 		this.direccion = direccion;
 		this.sueldoNetoMensual = sueldoNetoMensual;
 	}
-	public Cliente(String nombre,String apellido, int edad,String direccion,Float sueldoNetoMensual, PropiedadInmobiliaria propiedadInmobiliaria) {
+	public Cliente(String nombre,String apellido, int edad,String direccion,double sueldoNetoMensual, PropiedadInmobiliaria propiedadInmobiliaria) {
 		super();
-		this.nombre   = nombre;
+		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
 		this.direccion = direccion;
@@ -28,22 +28,23 @@ public class Cliente {
 		this.propiedadInmobiliaria = propiedadInmobiliaria;
 	}
 	//Metodos
-	public float getSueldoNetoAnual() {
-		return 0;//Hacer
+	public double getSueldoNetoAnual() {
+		return  this.getSueldoNetoMensual() * 12;
 	}
 	
-	public float getSueldoNetoMensual() {
-		return 0;//Hacer
+	public double getSueldoNetoMensual() {
+		return this.sueldoNetoMensual;
 	}
 	
 	public int getEdad() {
 		return 0;//Hacer
 	}
-	public void solicitarCreditoPersonal(Banco banco,float montoASolicitar,int cantidadDeMeses) {
-		//Hacer
+	
+	public void solicitarCreditoPersonal(Banco banco,double montoASolicitar,int cantidadDeMeses) {
+		banco.registrarSolicitudCreditoPersonal(this, montoASolicitar, cantidadDeMeses);
 	}
-	public void solicitarCreditoHipotecario(Banco banco, float montoASolicitar,int cantidadDeMeses) {
-		//Hacer
+	public void solicitarCreditoHipotecario(Banco banco, double montoASolicitar,int cantidadDeMeses) {
+		banco.registrarSolicitudCreditoHipotecario(this, montoASolicitar, cantidadDeMeses, this.propiedadInmobiliaria);
 	}
 	
 	
