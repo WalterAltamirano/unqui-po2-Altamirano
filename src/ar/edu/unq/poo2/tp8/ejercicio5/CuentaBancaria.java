@@ -15,16 +15,16 @@ public abstract class CuentaBancaria {
 	 }
 	
 	 //Metodos
-	 public String getTitular(){
+	 public String getTitular(){						//Operacion concreta
 		 return this.titular;
 	 }
-	 public int getSaldo(){								//Operacion primitiva
+	 public int getSaldo(){								//Operacion concreta (Es un Paso del esqueleto de extraer)
 		 return this.saldo;
 	 }
-	 protected void setSaldo(int monto){				//Operacion primitiva
+	 protected void setSaldo(int monto){				//Operacion concreta (Es un Paso del esqueleto de extraer)
 		 this.saldo=monto;
 	 }
-	 public void agregarMovimientos(String movimiento){	//Operacion primitiva
+	 public void agregarMovimientos(String movimiento){	//Operacion concreta (Es un Paso del esqueleto de extraer)
 		 this.movimientos.add(movimiento);
 	 }
 	 public final void extraer(int monto) {// Se modifica extraer porque es el Templeate Method
@@ -33,5 +33,5 @@ public abstract class CuentaBancaria {
 			 this.agregarMovimientos("Extraccion");
 		 }
 	 }
-	 protected abstract boolean puedeExtraer(int monto); //Es el metodo que solo cambia en el extraer
+	 protected abstract boolean puedeExtraer(int monto); // Operacion primitiva
 }
