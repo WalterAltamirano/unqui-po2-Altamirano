@@ -98,18 +98,6 @@ public class PokerStatus {
 		return streamDeCartas.map(carta -> carta.valor())
 			  	  .collect(Collectors.toList());
 	}
-	private String poquer() {
-		return "Poquer";
-	}
-	private String nada() {
-		return "Nada";
-	}
-	private String trio() {
-		return "Trio";
-	}
-	private String color() {
-		return "Color";
-	}
 	private <T> List<Integer> numeroDeAparicionesDe(List<T> cosas) {
 		
 		//List<T> palos = this.palosDeCartas();
@@ -140,7 +128,19 @@ public class PokerStatus {
 			return 0;
 		}
 	}
-	
+	//Creo que se convierte en un enum!!
+	private String poquer() {
+		return "Poquer";
+	}
+	private String nada() {
+		return "Nada";
+	}
+	private String trio() {
+		return "Trio";
+	}
+	private String color() {
+		return "Color";
+	}
 //	private List<Integer> numeroDeAparicionesDeCadaValor() {
 //	
 //	List<Integer> valores = this.valoresDeCartas();
