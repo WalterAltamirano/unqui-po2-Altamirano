@@ -70,7 +70,7 @@ public class ActividadSemanal {
 	}
 
 	public Deporte getDeporte() {
-		return deporte;
+		return this.deporte;
 	}
 	
 }
