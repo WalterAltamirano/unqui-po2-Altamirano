@@ -9,8 +9,8 @@ public class MismaLetraInicial extends Filtro{
 	 public List<WikipediaPage> getSimilarPages(WikipediaPage page,List<WikipediaPage> wikipedia) { 
 		List<WikipediaPage> paginasSimilares = wikipedia.stream()
 											   .filter(wikipediaPages -> 
-											   this.primeraLetraDelTitulo(wikipediaPages.getTitle()) 
-											   == this.primeraLetraDelTitulo(page.getTitle()))
+											   this.primeraLetraDelTitulo( wikipediaPages.getTitle() ). 
+											   equals(this.primeraLetraDelTitulo(page.getTitle())))
 				 							   .toList();
 		return paginasSimilares;
 	 }
